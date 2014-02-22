@@ -89,7 +89,12 @@ PRODUCT_COPY_FILES += \
     device/samsung/d2lte/gps/gps.conf:system/etc/gps.conf
 
 # OmniTorch
-PRODUCT_PACKAGES += OmniTorch
+PRODUCT_PACKAGES += \
+    OmniTorch
+
+# DeviceSettings
+PRODUCT_PACKAGES += \
+    GalaxyS3Settings
 
 # Wifi
 PRODUCT_PACKAGES += \

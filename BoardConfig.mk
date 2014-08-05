@@ -27,11 +27,11 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2lte/include
 
 # Kernel
 TARGET_KERNEL_SOURCE        := kernel/samsung/d2
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom user_debug=31 zcache
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom user_debug=31 zcache androidboot.selinux=permissive
 BOARD_KERNEL_BASE           := 0x80200000
 BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01300000
 BOARD_KERNEL_PAGESIZE       := 2048
-TARGET_KERNEL_CONFIG        := cyanogen_d2_defconfig
+TARGET_KERNEL_CONFIG        := deathly_d2_defconfig
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
@@ -56,6 +56,31 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+#TWRP
+PRODUCT_COPY_FILES += \
+    device/samsung/d2lte/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+TWHAVE_SELINUX := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+DEVICE_RESOLUTION := 720x1280
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+#TW_NO_USB_STORAGE := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/virtual/android_usb/android0/f_mass_storage/lun_ex/file
+TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p15"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "discard,noauto_da_alloc,journal_async_commit"
+TW_CRYPTO_FS_FLAGS := "0x00000406"
+TW_CRYPTO_KEY_LOC := "footer"
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true

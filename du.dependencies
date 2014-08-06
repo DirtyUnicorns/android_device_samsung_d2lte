@@ -24,9 +24,9 @@
     "revision": "du44"
   },
   {
-    "remote": "github",
-    "repository": "Deathly-Experience/deathly_d2_Kernel",
+    "remote": "du",
+    "repository": "deathly_d2_Kernel",
     "target_path": "kernel/samsung/d2",
-    "revision": "Deathly-4.4"
+    "revision": "du44"
   },
 ]

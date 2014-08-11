@@ -18,6 +18,12 @@
     "revision": "du44"
   },
   {
+    "remote": "github",
+    "repository": "CyanogenMod/android_frameworks_opt_hardware",
+    "target_path": "frameworks/opt/hardware",
+    "revision": "cm-11.0"
+  },
+  {
     "remote": "du",
     "repository": "proprietary_vendor_samsung",
     "target_path": "vendor/samsung",
